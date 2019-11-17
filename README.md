@@ -1,3 +1,3 @@
-# Kafka-quick-start
+# Kafka quick start
 
-This is a placeholder project to get started with kafka producer and consumer examples
+Examples showing how to get started with Kafka in java.
