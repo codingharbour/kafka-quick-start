@@ -24,6 +24,8 @@ public class SimpleKafkaConsumer {
 
         properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
+        properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
+
         Consumer<String, String> consumer = new KafkaConsumer<>(properties);
 
         //subscribe to topic
@@ -36,6 +38,7 @@ public class SimpleKafkaConsumer {
             for (ConsumerRecord<String, String> record : records) {
                 System.out.println("Message received: " + record.value());
             }
+            consumer.commitAsync();
         }
     }
 }
